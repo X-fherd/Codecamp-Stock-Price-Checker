@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const { schema } = mongoose;
 
-const StockSchema = new Schema({
+const StockSchema = new schema({
     symbol: {type: String, required: true},
     likes: {type: String, default: []},
 });
