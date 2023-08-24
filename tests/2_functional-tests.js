@@ -12,7 +12,7 @@ suite('Functional Tests', function() {
             .request(server)
             .get("/api/stock-prices/")
             .set("content-type", "application/json")
-            .query({stock: "TSLA"})
+            .query({ stock: "TSLA" })
             .end(function (err, res) {
                 assert.equal(res.status, 200);
                 assert.equal(res.body.stockData.stock, "TSLA");
@@ -25,7 +25,7 @@ suite('Functional Tests', function() {
             .request(server)
             .get("/api/stock-prices/")
             .set("content-type", "application/json")
-            .query({stock: "GOLD"})
+            .query({stock: "GOLD", like: true})
             .end(function (err, res) {
                 assert.equal(res.status, 200);
                 assert.equal(res.body.stockData.stock, "GOLD");
@@ -39,7 +39,7 @@ suite('Functional Tests', function() {
             .request(server)
             .get("/api/stock-prices/")
             .set("content-type", "application/json")
-            .query({stock: "GOLD"})
+            .query({stock: "GOLD", like: true})
             .end(function (err, res) {
                 assert.equal(res.status, 200);
                 assert.equal(res.body.stockData.stock, "GOLD");
