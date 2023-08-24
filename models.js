@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
-const { schema } = mongoose;
+const { Schema } = mongoose;
 
-const StockSchema = new mongoose.Schema({
+const StockSchema = new Schema({
     symbol: { type: String, required: true },
     likes: { type: Array, default: [] },
 });
